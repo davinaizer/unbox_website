@@ -1,0 +1,46 @@
+/* Font Guide
+    Font Weight     - Weight Value
+    Roboto Light    - 300
+    Roboto Regular  - 400
+    Roboto Bold     - 700
+    */
+
+
+/* Color Guide */
+$color-white: 		#FFFFFF;
+$color-black: 		#282828;
+$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+
+h1 {
+     color: #00ff00;
+}
+
+h2 {
+     color: #00ff00;
+}
+
+
+h3 {
+     color: #00ff00;
+}
+
+
+h4 {
+     color: #00ff00;
+}

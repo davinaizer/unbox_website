@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"../../app/styles/variables.scss"
+	],
+	"sourcesContent": [
+		"/* Font Guide\n    Font Weight     - Weight Value\n    Roboto Light    - 300\n    Roboto Regular  - 400\n    Roboto Bold     - 700\n    */\n\n\n/* Color Guide */\n$color-white: \t\t#FFFFFF;\n$color-black: \t\t#282828;\n$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7\n$brand-success:         #5cb85c !default;\n$brand-info:            #5bc0de !default;\n$brand-warning:         #f0ad4e !default;\n$brand-danger:          #d9534f !default;\n\n\n//== Typography\n//\n//## Font, line-height, and color for body text, headings, and more.\n\n$font-family-sans-serif:  \"Helvetica Neue\", Helvetica, Arial, sans-serif !default;\n$font-family-serif:       Georgia, \"Times New Roman\", Times, serif !default;\n//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.\n$font-family-monospace:   Menlo, Monaco, Consolas, \"Courier New\", monospace !default;\n$font-family-base:        $font-family-sans-serif !default;\n\n\nh1 {\n     color: #00ff00;\n}\n\nh2 {\n     color: #00ff00;\n}\n\n\nh3 {\n     color: #00ff00;\n}\n\n\nh4 {\n     color: #00ff00;\n}"
+	],
+	"mappings": "AAAA;;;;;MAKM;AAGN,iBAAiB;AAqBjB,EAAE,CAAC;EACE,KAAK,EAAE,OAAQ,GADhB;;AAIJ,EAAE,CAAC;EACE,KAAK,EAAE,OAAQ,GADhB;;AAKJ,EAAE,CAAC;EACE,KAAK,EAAE,OAAQ,GADhB;;AAKJ,EAAE,CAAC;EACE,KAAK,EAAE,OAAQ,GADhB",
+	"names": []
+}

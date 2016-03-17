@@ -1,0 +1,120 @@
+    @import "styles/variables.scss";
+    /* FOOTER CSS
+-------------------------*/
+    
+    #solutions {
+        background-image: url("../images/bg_solutions_1920.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        resize: none;
+        height: 1305px;
+        border: none;
+    }
+    
+    #solutions > .container > h2 {
+        padding-top: 200px;
+    }
+    
+    .intro-solution {
+        width: 80%;
+    }
+    
+    .content-folks {
+        padding-bottom: 90px;
+        padding-top: 50px;
+    }
+    
+    #solutions > .row {
+        align-content: center;
+    }
+    /* Box Folks */
+    
+    .box-folks {
+        margin-left: 18px;
+        background-image: url("../images/box_folks.jpg");
+        width: 1070px;
+        height: 375px;
+    }
+    
+    .box-folks > .row {
+        padding: 60px 15px 35px 15px;
+    }
+    
+    .padding-box-folks {
+        padding: 0px 35px 35px 35px;
+    }
+    
+    @media (max-width: 1199px) {
+        .box-folks {
+            margin-left: -80px;
+        }
+        .box-folks > .row {
+            padding: 60px 15px 35px 15px;
+        }
+        #solutions {
+            background-image: url("../images/bg_solutions_1920_02.jpg");
+            height: 1375px;
+        }
+    }
+    
+    @media (max-width: 1070px) {
+        .box-folks {
+            width: 1024px;
+            margin-left: -80px;
+        }
+        .box-folks > .row {
+            padding: 60px 15px 35px 15px;
+        }
+    }
+    
+    @media (max-width: 990px) {
+        #solutions {
+            background-image: url("../images/bg_solutions_990.jpg");
+            height: 1735px;
+        }
+        .content-folks {
+            padding-bottom: 50px;
+        }
+        .box-folks {
+            margin-left: 38px;
+            background-image: url("../images/box_folks_990.jpg");
+            width: 617px;
+            height: 540px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        #solutions {
+            background-image: none;
+            height: 2586px;
+            background-color: #1a1a1a;
+        }
+         h2 {
+            font-size: 30px;
+        }
+        #solutions > .container > .row > .col-xs-6 {
+            width: 90%;
+            padding-left: 10%;
+            text-align: center;
+        }
+        #solutions > .container > .row > .col-xs-6 > img {
+            padding-top: 20px;
+        }
+        .box-folks {
+            margin-left: 0px;
+            background-image: url("../images/box_folks_480.jpg");
+            width: 380px;
+            height: 790px;
+        }
+        .container > .box-folks > .row > .col-xs-6 {
+            width: 100%;
+            padding-left: 2%;
+            text-align: center;
+        }
+        .box-folks > .row {
+            padding: 50px 15px 35px 15px;
+        }
+    }
