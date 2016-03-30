@@ -6,6 +6,8 @@ require.config({
         text: 'libs/text',
         bootstrap: 'libs/bootstrap.min',
         TweenMax: "libs/TweenMax.min",
+        ScrollToPlugin: "libs/ScrollToPlugin.min",
+        owl: 'libs/owl.carousel.min',
         templates: '../templates'
     },
     shim: {
@@ -15,7 +17,12 @@ require.config({
         'bootstrap': {
             deps: ['jquery']
         },
-        'slidebars': {}
+        'owl': {
+            deps: ['jquery']
+        },
+        'TweenMax': {
+            deps: ['ScrollToPlugin']
+        }
     },
     map: {
         '*': {
@@ -29,6 +36,5 @@ require([
 ], function (App) {
     "use strict";
 
-    var app = new App({el: "#main-container"});
-    app.initialize();
+    new App({el: "#main-container"});
 });

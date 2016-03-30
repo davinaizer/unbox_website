@@ -8,15 +8,13 @@ define([
 ], function ($, Backbone, Router) {
     "use strict";
 
-    var App = Backbone.View.extend({
+    return Backbone.View.extend({
 
         initialize: function () {
             console.log("App.init");
 
-            Router.initialize();
+            var router = new Router();
+            Backbone.history.start();
         }
-
     });
-
-    return App;
 });

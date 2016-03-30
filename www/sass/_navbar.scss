@@ -1,0 +1,90 @@
+#navbar-top {
+    transition: all 2.0s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+
+.navbar-bg {
+    background-color: rgba(123, 25, 50, .0);
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, .8), rgba(252, 200, 157, 0));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, .8), rgba(255, 255, 255, 0));
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, .8), rgba(255, 255, 255, 0));
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .8), rgba(255, 255, 255, 0));
+    border: 0px;
+    height: 60px;
+    /*
+border-width: 2px 0px 0px 0px;
+border-color: #00e3fe;*/
+}
+
+.navbar-default .navbar-collapse {
+    padding-top: 5px;
+}
+
+.logo-unbox {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-toggle {
+    padding-top: 13px;
+}
+
+.navbar-hidden {
+    background-color: #d32d40;
+    border: 0px;
+    height: 60px;
+    /*
+border-width: 2px 0px 0px 0px;
+border-color: #00e3fe;*/
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #cfc6a0;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: #fff;
+    background-color: #6c2133;
+}
+
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #cfc6a0;
+    background-color: #6c2133;
+}
+
+.nav_border {
+    margin-top: 0px;
+}
+
+@media (max-width: 766px) {
+    .navbar-right {
+        margin-top: -6px;
+        background: -moz-linear-gradient(top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 1));
+        background: -webkit-linear-gradient(top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 1));
+        background: -ms-linear-gradient(top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 1));
+        background: -o-linear-gradient(top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 1));
+    }
+    .navbar-nav > li > a {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        text-transform: none;
+        font-family: "Roboto";
+        font-weight: 100;
+        font-size: 20px;
+    }
+}

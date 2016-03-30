@@ -4,49 +4,70 @@
 define([
     'jquery',
     'lodash',
-    'backbone'
-], function ($, _, Backbone) {
+    'backbone',
+    'TweenMax',
 
-    var AppRouter = Backbone.Router.extend({
+    'views/ui/navbar_view',
+
+    'views/pages/home_view',
+    'views/pages/unbox_view',
+    'views/pages/solutions_view',
+    'views/pages/projects_view',
+    'views/pages/clients_view',
+    'views/pages/contact_view',
+    'views/pages/footer_view'
+
+], function ($, _, Backbone, TweenMax, NavbarView, HomeView, UnboxView, SolutionsView, ProjectsView, ClientsView, ContactView, FooterView) {
+
+    return Backbone.Router.extend({
 
         routes: {
-            // Define some URL routes
-            '/projects': 'showProjects',
-            '/users': 'showUsers',
+            '': 'renderAll',
+            'pages/:id': 'scrollTo'
+        },
 
-            // Default
-            '*actions': 'defaultAction'
+        initialize: function () {
+            console.log("Router.initialize");
+
+            this.hasInit = false;
+
+            this.views = {
+                "navbar": new NavbarView(),
+                "home": new HomeView(),
+                "unbox": new UnboxView(),
+                "solutions": new SolutionsView(),
+                "projects": new ProjectsView(),
+                "clients": new ClientsView(),
+                "contact": new ContactView(),
+                "footer": new FooterView()
+            };
+        },
+
+        renderAll: function () {
+            console.log("Router.renderAll");
+
+            _.forEach(this.views, function (view) {
+                view.render();
+            });
+
+            this.hasInit = true;
+        },
+
+        scrollTo: function (id) {
+            console.log("Router.scrollTo:", id);
+
+            if (!this.hasInit) {
+                this.renderAll();
+            }
+
+            var $anchor = $("#" + id);
+            if ($anchor.length > 0) {
+                TweenMax.to(window, 1.5, {scrollTo: {y: $anchor.offset().top}, ease: Power3.easeInOut});
+            }
+        },
+
+        defaultAction: function () {
+            console.log("Router.defaultAction");
         }
-
     });
-
-    var initialize = function () {
-
-        var app_router = new AppRouter;
-
-        app_router.on('showProjects', function () {
-            // Call render on the module we loaded in via the dependency array
-            // 'views/projects/list'
-            var projectListView = new ProjectListView();
-            projectListView.render();
-        });
-
-        // As above, call render on our loaded module
-        // 'views/users/list'
-        app_router.on('showUsers', function () {
-            var userListView = new UserListView();
-            userListView.render();
-        })
-
-        app_router.on('defaultAction', function (actions) {
-            // We have no matching route, lets just log what the URL was
-            console.log('No route:', actions);
-        });
-
-        Backbone.history.start();
-    };
-
-    return {
-        initialize: initialize
-    };
 });

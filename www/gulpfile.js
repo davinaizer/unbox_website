@@ -19,13 +19,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('optimize-images', function () {
-    return gulp.src('app/assets/**/*')
+    return gulp.src('app/images/**/*')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('dist/assets'));
+        .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('watch', function () {
@@ -61,13 +61,13 @@ gulp.task('serve-dist', function () {
 
 gulp.task('zip-dist', function () {
     return gulp.src('dist/**')
-        .pipe(zip('ebookJS-dist.zip'))
+        .pipe(zip('dist.zip'))
         .pipe(gulp.dest('dist'));
 });
 
 gulp.task('zip-app', function () {
     return gulp.src('app/**')
-        .pipe(zip('ebookJS-app.zip'))
+        .pipe(zip('app.zip'))
         .pipe(gulp.dest('.'));
 });
 

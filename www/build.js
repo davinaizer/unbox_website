@@ -12,11 +12,19 @@
         lodash: 'libs/lodash.min',
         text: 'libs/text',
         bootstrap: 'libs/bootstrap.min',
-        TweenMax: "libs/TweenMax.min"
+        TweenMax: "libs/TweenMax.min",
+        owl: 'libs/owl.carousel.min',
+        templates: '../templates'
     },
     shim: {
-        lodash: {
+        'lodash': {
             exports: '_'
+        },
+        'bootstrap': {
+            deps: ['jquery']
+        },
+        'owl': {
+            deps: ['jquery']
         }
     },
     map: {
