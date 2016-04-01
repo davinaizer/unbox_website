@@ -7,6 +7,7 @@ require.config({
         bootstrap: 'libs/bootstrap.min',
         TweenMax: "libs/TweenMax.min",
         ScrollToPlugin: "libs/ScrollToPlugin.min",
+        ScrollSpy: 'libs/jquery-scrollspy',
         owl: 'libs/owl.carousel.min',
         templates: '../templates'
     },
@@ -20,8 +21,11 @@ require.config({
         'owl': {
             deps: ['jquery']
         },
-        'TweenMax': {
-            deps: ['ScrollToPlugin']
+        'ScrollToPlugin': {
+            deps: ['TweenMax']
+        },
+        'ScrollSpy': {
+            deps: ['jquery']
         }
     },
     map: {

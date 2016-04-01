@@ -23,7 +23,8 @@ define([
 
         routes: {
             '': 'renderAll',
-            'pages/:id': 'scrollTo'
+            'pages/:id': 'scrollTo',
+            'pages/:id/:itemId': 'openProject'
         },
 
         initialize: function () {
@@ -41,6 +42,8 @@ define([
                 "contact": new ContactView(),
                 "footer": new FooterView()
             };
+
+            Backbone.history.start();
         },
 
         renderAll: function () {
@@ -49,6 +52,16 @@ define([
             _.forEach(this.views, function (view) {
                 view.render();
             });
+
+
+            $("a[href^='#']").on('click', function (e) {
+                var url = $(this).attr("href");
+                e.preventDefault();
+
+                console.log(url);
+                Backbone.history.navigate(url);
+            });
+
 
             this.hasInit = true;
         },
@@ -64,6 +77,14 @@ define([
             if ($anchor.length > 0) {
                 TweenMax.to(window, 1.5, {scrollTo: {y: $anchor.offset().top}, ease: Power3.easeInOut});
             }
+        },
+
+        openProject: function (id, itemId) {
+            if (!this.hasInit) {
+                this.renderAll();
+            }
+
+            console.log("Router.openProject >", itemId);
         },
 
         defaultAction: function () {
