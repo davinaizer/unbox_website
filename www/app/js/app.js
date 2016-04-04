@@ -14,6 +14,9 @@ define([
             console.log("App.init");
 
             var router = new Router();
+            router.renderAll();
+
+            Backbone.history.start();
         }
     });
 });

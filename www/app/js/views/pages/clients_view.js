@@ -14,9 +14,7 @@ define([
     return Backbone.View.extend({
 
         el: $("#clients"),
-
         template: _.template(tpl),
-
         events: {},
 
         initialize: function () {

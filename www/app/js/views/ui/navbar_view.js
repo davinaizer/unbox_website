@@ -8,18 +8,16 @@ define([
     'bootstrap',
     'TweenMax',
     'ScrollToPlugin',
-    'ScrollSpy',
     'text!templates/ui/navbar.html'
-], function ($, _, Backbone, Bootstrap, TweenMax, ScrollToPlugin, ScrollSpy, tpl) {
+], function ($, _, Backbone, Bootstrap, TweenMax, ScrollToPlugin, tpl) {
     "use strict";
 
     return Backbone.View.extend({
 
         el: $("#navbar"),
         template: _.template(tpl),
-
         events: {
-            "click .page-scroll": "clickHandler"
+            "click a": "clickHandler"
         },
 
         initialize: function () {
@@ -41,31 +39,31 @@ define([
         transitionIn: function () {
             console.log(this.$el.attr("id") + ".transitionIn()");
 
-            this.$('[id*=pages]');
-
-            $("#pages div").scrollspy({
-                min: 50,
-                onEnter: function (element, position) {
-                    //$("#nav").addClass('fixed');
-                    console.log("ONENTER", element);
-                },
-                onLeave: function (element, position) {
-                    //$("#nav").removeClass('fixed');
-                    //console.log("ONLEAVE");
-                }
+            $("body").scrollspy({
+                target: "#navbar-top",
+                offset: 50
             });
 
+            //recalculate every onResize event
             /*
-             $("body").scrollspy({
-             target: "#navbar-top",
-             offset: 50
+             $("#pages>div").each(function (i) {
+             var position = $(this).position();
+             $(this).scrollspy({
+             min: position.top,
+             max: position.top + $(this).height(),
+             onEnter: function (el, pos) {
+             var id = $(el).attr("id");
+             console.log("ONENTER", id);
+             Backbone.history.navigate(id);
+             }
              });
+             });
+             */
 
-             $("#navbar-top").on("activate.bs.scrollspy", function () {
-             var currentView = $(".nav li.active > a").attr("href");
-             console.log("Scroll Change:", currentView);
-             Backbone.history.navigate(currentView);
-             });*/
+
+            //$("#navbar-top").on("activate.bs.scrollspy", function () {
+            //    var currentView = $(".nav li.active > a").attr("href");
+            //});
 
             TweenMax.staggerFrom(this.$("li"), 1, {css: {x: "-=10", opacity: 0}}, 0.1);
         },
@@ -78,6 +76,7 @@ define([
             this.$('.navbar-toggle:visible').click();
         },
 
+        // change - use scrollspy instead
         scrollHandler: function () {
             var sepTopOffset = $('#top-separator').offset().top;
             var navbarTop = this.$('#navbar-top');

@@ -6,18 +6,17 @@ define([
     'lodash',
     'backbone',
     'TweenMax',
+    'bootstrap',
     'text!templates/pages/projects.html'
-], function ($, _, Backbone, TweenMax, tpl) {
+], function ($, _, Backbone, TweenMax, Boostrap, tpl) {
     "use strict";
 
     return Backbone.View.extend({
 
         el: $("#projects"),
-
         template: _.template(tpl),
-
         events: {
-            "click #somewhere": "someFunction"
+            "click a": "clickHandler"
         },
 
         initialize: function () {
@@ -34,7 +33,13 @@ define([
 
         transitionIn: function () {
             console.log(this.$el.attr("id") + ".transitionIn()");
+
+            $('#myModal').modal();
             TweenMax.to(this.$el, 1, {css: {opacity: 1}});
+        },
+
+        clickHandler: function (e) {
+
         }
     });
 });

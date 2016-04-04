@@ -22,15 +22,12 @@ define([
     return Backbone.Router.extend({
 
         routes: {
-            '': 'renderAll',
-            'pages/:id': 'scrollTo',
-            'pages/:id/:itemId': 'openProject'
+            ':id': 'scrollTo',
+            ':id/:itemId': 'openSubPage'
         },
 
         initialize: function () {
             console.log("Router.initialize");
-
-            this.hasInit = false;
 
             this.views = {
                 "navbar": new NavbarView(),
@@ -42,8 +39,6 @@ define([
                 "contact": new ContactView(),
                 "footer": new FooterView()
             };
-
-            Backbone.history.start();
         },
 
         renderAll: function () {
@@ -53,42 +48,34 @@ define([
                 view.render();
             });
 
-
+            // block default anchor event
             $("a[href^='#']").on('click', function (e) {
-                var url = $(this).attr("href");
-                e.preventDefault();
-
-                console.log(url);
-                Backbone.history.navigate(url);
+                //var url = $(this).attr("href");
+                //e.preventDefault();
+                //Backbone.history.navigate(url);
             });
-
-
-            this.hasInit = true;
         },
 
         scrollTo: function (id) {
             console.log("Router.scrollTo:", id);
 
-            if (!this.hasInit) {
-                this.renderAll();
-            }
-
             var $anchor = $("#" + id);
             if ($anchor.length > 0) {
-                TweenMax.to(window, 1.5, {scrollTo: {y: $anchor.offset().top}, ease: Power3.easeInOut});
+                TweenMax.to(window, 1.5, {
+                    scrollTo: {y: $anchor.offset().top},
+                    ease: Power3.easeInOut
+                });
             }
         },
 
-        openProject: function (id, itemId) {
-            if (!this.hasInit) {
-                this.renderAll();
+        openSubPage: function (id, itemId) {
+            console.log("Router.openSubPage:", id, "(" + itemId + ")");
+
+            this.scrollTo(id);
+
+            if (id === "projects") {
+                $("#portfolioModal" + itemId).modal('show');
             }
-
-            console.log("Router.openProject >", itemId);
-        },
-
-        defaultAction: function () {
-            console.log("Router.defaultAction");
         }
     });
 });
