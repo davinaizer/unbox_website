@@ -49,9 +49,11 @@ define([
             });
 
             // block default anchor event
+            var that = this;
             $("a[href^='#']").on('click', function (e) {
-                //var url = $(this).attr("href");
-                //e.preventDefault();
+                var url = $(this).attr("href");
+                e.preventDefault();
+                that.scrollTo(url);
                 //Backbone.history.navigate(url);
             });
         },
@@ -59,7 +61,7 @@ define([
         scrollTo: function (id) {
             console.log("Router.scrollTo:", id);
 
-            var $anchor = $("#" + id);
+            var $anchor = $(id);
             if ($anchor.length > 0) {
                 TweenMax.to(window, 1.5, {
                     scrollTo: {y: $anchor.offset().top},
