@@ -16,7 +16,7 @@ define([
             var router = new Router();
             router.renderAll();
 
-            Backbone.history.start();
+            Backbone.history.start({pushState: true});
         }
     });
 });

@@ -13,6 +13,7 @@
         text: 'libs/text',
         bootstrap: 'libs/bootstrap.min',
         TweenMax: "libs/TweenMax.min",
+        ScrollToPlugin: "libs/ScrollToPlugin.min",
         owl: 'libs/owl.carousel.min',
         templates: '../templates'
     },
@@ -25,6 +26,9 @@
         },
         'owl': {
             deps: ['jquery']
+        },
+        'ScrollToPlugin': {
+            deps: ['TweenMax']
         }
     },
     map: {

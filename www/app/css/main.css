@@ -5980,6 +5980,7 @@ p.copyright {
     padding: 50px 15px 35px 15px; } }
 
 #projects {
+  padding-top: 50px;
   background: -moz-linear-gradient(top, #fff, #ebebeb);
   background: -webkit-linear-gradient(top, #fff, #ebebeb);
   background: -ms-linear-gradient(top, #fff, #ebebeb);
@@ -6133,7 +6134,7 @@ p.copyright {
     height: 350px; } }
 
 #clients {
-  height: 300px; }
+  height: 500px; }
 
 #clients > .customer-list {
   padding-top: 30px;

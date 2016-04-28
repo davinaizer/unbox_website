@@ -15,9 +15,7 @@ define([
 
         el: $("#projects"),
         template: _.template(tpl),
-        events: {
-            "click a": "clickHandler"
-        },
+        events: {},
 
         initialize: function () {
             console.log(this.$el.attr("id") + ".initialize()");
@@ -36,10 +34,6 @@ define([
 
             $('#myModal').modal();
             TweenMax.to(this.$el, 1, {css: {opacity: 1}});
-        },
-
-        clickHandler: function (e) {
-
         }
     });
 });

@@ -6,9 +6,7 @@ define([
     'lodash',
     'backbone',
     'TweenMax',
-
     'views/ui/navbar_view',
-
     'views/pages/home_view',
     'views/pages/unbox_view',
     'views/pages/solutions_view',
@@ -39,6 +37,12 @@ define([
                 "contact": new ContactView(),
                 "footer": new FooterView()
             };
+
+            _.bindAll(this, 'scrollTo', 'checkUrlHash');
+
+            $("body").on('activate.bs.scrollspy', $.proxy(this.checkUrlHash, this));
+
+            this.isTweening = false;
         },
 
         renderAll: function () {
@@ -51,23 +55,44 @@ define([
             // block default anchor event
             var that = this;
             $("a[href^='#']").on('click', function (e) {
-                var url = $(this).attr("href");
                 e.preventDefault();
+
+                var url = $(this).attr("href");
                 that.scrollTo(url);
-                //Backbone.history.navigate(url);
             });
         },
 
         scrollTo: function (id) {
             console.log("Router.scrollTo:", id);
-
             var $anchor = $(id);
             if ($anchor.length > 0) {
+                this.isTweening = true;
+
                 TweenMax.to(window, 1.5, {
                     scrollTo: {y: $anchor.offset().top},
-                    ease: Power3.easeInOut
+                    ease: Power3.easeInOut,
+                    onAutoKill: this.onAutoKill,
+                    onComplete: this.updateHash,
+                    onCompleteScope: this,
+                    onCompleteParams: [id]
                 });
             }
+        },
+
+        onAutoKill: function () {
+            this.isTweening = false;
+        },
+
+        checkUrlHash: function () {
+            if (!this.isTweening) {
+                var currentSection = $(".nav li.active > a").attr("href");
+                this.updateHash(currentSection);
+            }
+        },
+
+        updateHash: function (options) {
+            this.isTweening = false;
+            Backbone.history.navigate(options, {trigger: false});
         },
 
         openSubPage: function (id, itemId) {
