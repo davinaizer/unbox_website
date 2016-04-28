@@ -40,7 +40,7 @@ define([
 
             $("body").scrollspy({
                 target: ".navbar",
-                offset: 50
+                offset: 100
             });
 
             TweenMax.staggerFrom(this.$("li"), 1, {css: {x: "-=10", opacity: 0}}, 0.1);

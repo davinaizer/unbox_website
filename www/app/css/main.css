@@ -5739,7 +5739,6 @@ p.copyright {
     font-size: 20px; } }
 
 .carousel {
-  background: #7b1932;
   margin-top: 30px;
   position: relative; }
 
@@ -6159,7 +6158,7 @@ p.copyright {
   background-repeat: no-repeat;
   background-position: center top;
   resize: none;
-  height: 400px;
+  height: 500px;
   border: none; }
 
 .foot-position {
@@ -6174,7 +6173,7 @@ p.copyright {
   background: transparent url(../images/pattern.png) repeat top left; }
 
 .overlay-foot > h3.inverted {
-  padding-top: 40px; }
+  padding-top: 60px; }
 
 .overlay-foot > .container {
   padding-top: 40px; }

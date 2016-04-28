@@ -16,7 +16,13 @@ define([
             var router = new Router();
             router.renderAll();
 
-            Backbone.history.start({pushState: true});
+            var baseFolder = window.location.pathname.replace('/', '').split('/')[0];
+            console.log("App.baseFolder:", baseFolder);
+
+            Backbone.history.start({
+                pushState: true,
+                root: baseFolder
+            });
         }
     });
 });

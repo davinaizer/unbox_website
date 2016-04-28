@@ -20,12 +20,13 @@ define([
     return Backbone.Router.extend({
 
         routes: {
-            ':id': 'scrollTo',
-            ':id/:itemId': 'openSubPage'
+            ':page(/:id)': 'scrollTo'
         },
 
         initialize: function () {
             console.log("Router.initialize");
+
+            _.bindAll(this, 'scrollTo', 'checkUrlHash', 'openSubPage');
 
             this.views = {
                 "navbar": new NavbarView(),
@@ -38,11 +39,10 @@ define([
                 "footer": new FooterView()
             };
 
-            _.bindAll(this, 'scrollTo', 'checkUrlHash');
+            this.isTweening = false;
+            this.currentRoute = "";
 
             $("body").on('activate.bs.scrollspy', $.proxy(this.checkUrlHash, this));
-
-            this.isTweening = false;
         },
 
         renderAll: function () {
@@ -58,24 +58,32 @@ define([
                 e.preventDefault();
 
                 var url = $(this).attr("href");
-                that.scrollTo(url);
+                Backbone.history.navigate(url, {trigger: true});
             });
         },
 
-        scrollTo: function (id) {
-            console.log("Router.scrollTo:", id);
-            var $anchor = $(id);
-            if ($anchor.length > 0) {
-                this.isTweening = true;
+        scrollTo: function (page, id) {
+            console.log("Router.scrollTo:", page, ":", id);
 
-                TweenMax.to(window, 1.5, {
-                    scrollTo: {y: $anchor.offset().top},
-                    ease: Power3.easeInOut,
-                    onAutoKill: this.onAutoKill,
-                    onComplete: this.updateHash,
-                    onCompleteScope: this,
-                    onCompleteParams: [id]
-                });
+            if (page != undefined && page.length > 0) {
+                if (this.currentRoute != page) {
+
+                    var $anchor = $("#" + page);
+                    this.isTweening = true;
+
+                    TweenMax.to(window, 1.5, {
+                        scrollTo: {y: $anchor.offset().top},
+                        ease: Power3.easeInOut,
+                        onAutoKill: this.onAutoKill,
+                        onComplete: this.onCompleteScroll,
+                        onCompleteScope: this,
+                        onCompleteParams: [page, id]
+                    });
+                } else {
+                    if (id != undefined && id.length > 0) {
+                        this.openSubPage(page, id);
+                    }
+                }
             }
         },
 
@@ -86,22 +94,22 @@ define([
         checkUrlHash: function () {
             if (!this.isTweening) {
                 var currentSection = $(".nav li.active > a").attr("href");
-                this.updateHash(currentSection);
+                Backbone.history.navigate(currentSection, {trigger: false});
+                this.currentRoute = Backbone.history.getFragment();
             }
         },
 
-        updateHash: function (options) {
+        onCompleteScroll: function (options) {
+            console.log("onCompleteScroll.options:", options);
             this.isTweening = false;
-            Backbone.history.navigate(options, {trigger: false});
+            this.currentRoute = Backbone.history.getFragment();
         },
 
-        openSubPage: function (id, itemId) {
-            console.log("Router.openSubPage:", id, "(" + itemId + ")");
+        openSubPage: function (page, id) {
+            console.log("Router.openSubPage:", page, "(" + id + ")");
 
-            this.scrollTo(id);
-
-            if (id === "projects") {
-                $("#portfolioModal" + itemId).modal('show');
+            if (page === "projects") {
+                $("#portfolioModal" + id).modal('show');
             }
         }
     });
