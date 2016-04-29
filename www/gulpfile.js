@@ -19,25 +19,26 @@ gulp.task('sass', function () {
 });
 
 gulp.task('optimize-images', function () {
-    return gulp.src('app/images/**/*')
+    return gulp.src('app/assets/**/*')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch(['*.html', 'templates/**/*.html', 'css/**/*.css', 'js/**/*.js'], {cwd: 'app'}, reload);
+    gulp.watch('./templates/**/*.html', ['compile-jst']);
+    gulp.watch(['*.html', 'css/**/*.css', 'js/**/*.js'], {cwd: 'app'}, reload);
 });
 
 gulp.task('compile-jst', function () {
-    gulp.src('app/templates/**/*.html')
+    gulp.src('templates/**/*.html')
         .pipe(template())
         .pipe(concat('templates.js'))
-        .pipe(gulp.dest('app/templates'));
+        .pipe(gulp.dest('app/js/templates'));
 });
 
 // watch files for changes and reload
@@ -61,13 +62,13 @@ gulp.task('serve-dist', function () {
 
 gulp.task('zip-dist', function () {
     return gulp.src('dist/**')
-        .pipe(zip('dist.zip'))
+        .pipe(zip('ebookJS-dist.zip'))
         .pipe(gulp.dest('dist'));
 });
 
 gulp.task('zip-app', function () {
     return gulp.src('app/**')
-        .pipe(zip('app.zip'))
+        .pipe(zip('ebookJS-app.zip'))
         .pipe(gulp.dest('.'));
 });
 
