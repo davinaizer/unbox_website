@@ -2490,7 +2490,7 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
 
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
   cursor: not-allowed;
-  opacity: 0.65;
+  opacity: .65;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
   box-shadow: none; }
@@ -4694,14 +4694,14 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
-  opacity: 0.2;
+  opacity: .2;
   filter: alpha(opacity=20); }
 
 .close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: .5;
   filter: alpha(opacity=50); }
 
 button.close {
@@ -4776,7 +4776,7 @@ button.close {
   filter: alpha(opacity=0); }
 
 .modal-backdrop.in {
-  opacity: 0.5;
+  opacity: .5;
   filter: alpha(opacity=50); }
 
 .modal-header {
@@ -4868,7 +4868,7 @@ button.close {
   filter: alpha(opacity=0); }
 
 .tooltip.in {
-  opacity: 0.9;
+  opacity: .9;
   filter: alpha(opacity=90); }
 
 .tooltip.top {
@@ -5166,7 +5166,7 @@ button.close {
   left: 0;
   bottom: 0;
   width: 15%;
-  opacity: 0.5;
+  opacity: .5;
   filter: alpha(opacity=50);
   font-size: 20px;
   color: #fff;
@@ -5194,7 +5194,7 @@ button.close {
   outline: 0;
   color: #fff;
   text-decoration: none;
-  opacity: 0.9;
+  opacity: .9;
   filter: alpha(opacity=90); }
 
 .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
@@ -5619,23 +5619,30 @@ h4.inverted {
 p {
   color: #999999;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 15px;
-  line-height: 160%; }
+  line-height: 130%; }
+
+p.small {
+  color: #999999;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 120%; }
 
 p.inverted {
   color: #ffffff;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 500;
   font-size: 15px;
-  line-height: 160%; }
+  line-height: 130%; }
 
 p.featured {
   color: #d32d40;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 16px;
-  line-height: 160%; }
+  line-height: 130%; }
 
 p.inverted a:link {
   color: #ffffff;
@@ -5710,12 +5717,12 @@ p.copyright {
   color: #cfc6a0; }
 
 .navbar-default .navbar-nav > .active > a {
-  color: #fff;
-  background-color: #6c2133; }
+  color: #cfc6a0;
+  background: none; }
 
 .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #cfc6a0;
-  background-color: #6c2133; }
+  background: none; }
 
 .nav_border {
   margin-top: 0px; }
@@ -5906,6 +5913,9 @@ p.copyright {
 .intro-solution {
   width: 80%; }
 
+.img-padding {
+  padding-bottom: 20px; }
+
 .content-folks {
   padding-bottom: 90px;
   padding-top: 50px; }
@@ -5984,7 +5994,7 @@ p.copyright {
   background: -webkit-linear-gradient(top, #fff, #ebebeb);
   background: -ms-linear-gradient(top, #fff, #ebebeb);
   background: -o-linear-gradient(top, #fff, #ebebeb);
-  height: 1120px;
+  height: 1500px;
   border: none; }
 
 #projects > h2 {
@@ -5992,6 +6002,10 @@ p.copyright {
 
 #projects > h3 {
   padding-bottom: 40px; }
+
+.carousel {
+  margin-top: 0px;
+  margin-left: 0px; }
 
 .portfolio-caption {
   max-width: 400px;
@@ -6094,14 +6108,24 @@ p.copyright {
   top: 42%;
   color: #fff; }
 
-#Port-Carousel {
-  height: 550px; }
+.modal-body ul {
+  color: #999999;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 130%; }
 
-#Port-Carousel > .carousel-indicators li {
+.modal-body .carousel {
+  height: 510px; }
+
+.modal-body .carousel .carousel-indicators {
+  bottom: 0px; }
+
+.modal-body .carousel .carousel-indicators li {
   border: none;
   background-color: #d32d40; }
 
-#Port-Carousel > .carousel-indicators .active {
+.modal-body .carousel .carousel-indicators .active {
   width: 11px;
   height: 11px;
   background-color: #282828; }
@@ -6139,14 +6163,12 @@ p.copyright {
   padding-top: 30px;
   padding-bottom: 50px; }
 
-.owl-pagination {
-  display: none; }
+.img-padding {
+  padding-top: 20px; }
 
 @media (max-width: 480px) {
   h2 {
     font-size: 30px; }
-  .owl-pagination {
-    display: inline; }
   #clients {
     height: 330px; } }
 

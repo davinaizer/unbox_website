@@ -7,19 +7,15 @@
     padding-bottom: 50px;
 }
 
-.owl-pagination {
-    display: none;
+.img-padding {
+    padding-top: 20px;
 }
 
-@media (max-width: 900px) {
-}
+@media (max-width: 900px) {}
 
 @media (max-width: 480px) {
     h2 {
         font-size: 30px;
-    }
-    .owl-pagination {
-        display: inline;
     }
     #clients {
         height: 330px;

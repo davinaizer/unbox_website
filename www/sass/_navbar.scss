@@ -50,18 +50,19 @@ border-color: #00e3fe;*/
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: #cfc6a0;
+    color: #cfc6a0;    
 }
 
 .navbar-default .navbar-nav > .active > a {
-    color: #fff;
-    background-color: #6c2133;
+    color: #cfc6a0;
+    background: none;
+
 }
 
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     color: #cfc6a0;
-    background-color: #6c2133;
+    background: none;
 }
 
 .nav_border {

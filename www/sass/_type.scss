@@ -103,9 +103,17 @@ h4.inverted {
 p {
     color: #999999;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 15px;
-    line-height: 160%;
+    line-height: 130%;
+}
+
+p.small {
+    color: #999999;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 120%;
 }
 
 p.inverted {
@@ -113,7 +121,7 @@ p.inverted {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 500;
     font-size: 15px;
-    line-height: 160%;
+    line-height: 130%;
 }
 
 p.featured {
@@ -121,7 +129,7 @@ p.featured {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     font-size: 16px;
-    line-height: 160%;
+    line-height: 130%;
 }
 
 p.inverted a:link {

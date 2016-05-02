@@ -1,5 +1,6 @@
 /* SOLUTIONS CSS
 -------------------------*/
+
 #solutions {
     background-image: url("../images/bg_solutions_1920.jpg");
     -webkit-background-size: cover;
@@ -20,6 +21,10 @@
     width: 80%;
 }
 
+.img-padding {
+padding-bottom: 20px;
+}
+
 .content-folks {
     padding-bottom: 90px;
     padding-top: 50px;
@@ -28,6 +33,7 @@
 #solutions > .row {
     align-content: center;
 }
+
 
 /* Box Folks */
 
