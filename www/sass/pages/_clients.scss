@@ -14,10 +14,10 @@
 @media (max-width: 900px) {}
 
 @media (max-width: 480px) {
+    #clients {
+        height: auto;
+    }
     h2 {
         font-size: 30px;
-    }
-    #clients {
-        height: 330px;
     }
 }

@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-position: center top;
     resize: none;
-    height: 1305px;
+    height: auto;
     border: none;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .img-padding {
-padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .content-folks {
@@ -61,24 +61,13 @@ padding-bottom: 20px;
     }
     #solutions {
         background-image: url("../images/bg_solutions_1920_02.jpg");
-        height: 1375px;
     }
 }
 
-@media (max-width: 1070px) {
-    .box-folks {
-        width: 1024px;
-        margin-left: -80px;
-    }
-    .box-folks > .row {
-        padding: 60px 15px 35px 15px;
-    }
-}
 
 @media (max-width: 990px) {
     #solutions {
         background-image: url("../images/bg_solutions_990.jpg");
-        height: 1735px;
     }
     .content-folks {
         padding-bottom: 50px;
@@ -94,32 +83,44 @@ padding-bottom: 20px;
 @media (max-width: 480px) {
     #solutions {
         background-image: none;
-        height: 2586px;
         background-color: #1a1a1a;
+        .col-xs-12 {
+            text-align: center;
+        }
     }
     h2 {
         font-size: 30px;
     }
-    #solutions > .container > .row > .col-xs-6 {
-        width: 90%;
-        padding-left: 10%;
-        text-align: center;
-    }
-    #solutions > .container > .row > .col-xs-6 > img {
-        padding-top: 20px;
+    .content-folks {
+        padding-top: 0px;
     }
     .box-folks {
-        margin-left: 0px;
+        margin-left: -25px;
         background-image: url("../images/box_folks_480.jpg");
-        width: 380px;
+        width: 115%;
         height: 790px;
+        .row {
+            padding: 50px 15px 35px 15px;
+        }
     }
-    .container > .box-folks > .row > .col-xs-6 {
+    .padding-box-folks {
+        padding: 0px 35px 80px 35px;
+    }
+}
+
+@media (max-width: 320px) {
+    .col-xs-12 {
         width: 100%;
-        padding-left: 2%;
         text-align: center;
     }
-    .box-folks > .row {
-        padding: 50px 15px 35px 15px;
+    .box-folks {
+        margin-left: -45px;
+        width: 320px;
+        .row {
+            padding: 30px 15px 35px 15px;
+        }
+    }
+    .padding-box-folks {
+        padding: 0px 25px 45px 25px;
     }
 }

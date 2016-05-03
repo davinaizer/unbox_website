@@ -5745,6 +5745,17 @@ p.copyright {
     font-weight: 100;
     font-size: 20px; } }
 
+@media (max-width: 480px) {
+  .navbar-header {
+    margin-right: 0px;
+    width: 100%; } }
+
+@media (max-width: 320px) {
+  .navbar-bg {
+    max-width: 320px; }
+  .navbar-header {
+    max-width: 320px; } }
+
 .carousel {
   margin-top: 30px;
   position: relative; }
@@ -5790,7 +5801,7 @@ p.copyright {
     padding-top: 200px;
     height: 525px; }
   #home > .overlay-intro > .intro-cell > h1 {
-    font-size: 30px; }
+    font-size: 40px; }
   .triangle-botton {
     width: 150px; } }
 
@@ -5821,7 +5832,6 @@ p.copyright {
   padding: 40px 70px 25px 70px; }
 
 .unbox-area {
-  min-height: 485px;
   border: none; }
 
 .padding-top-unbox {
@@ -5877,24 +5887,28 @@ p.copyright {
 
 @media (max-width: 480px) {
   #unbox {
-    height: 1300px; }
+    height: auto; }
   .le-area {
-    height: 755px; }
+    height: auto; }
   .le-featured {
     padding: 35px 40px 25px 40px;
-    height: 310px; }
+    height: auto; }
   h2.inverted {
     font-size: 30px; }
-  .col-xs-7 {
-    width: 85%; }
-  .unbox-area {
-    height: 480px; }
   #unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: none;
+    padding-right: none;
     height: 360px; }
   .padding-top-unbox {
     padding-top: 0px; } }
+
+@media (max-width: 320px) {
+  #unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
+    height: 395px; }
+  .le-featured {
+    padding: 25px 40px 25px 40px; }
+  .col-xs-12 {
+    margin-bottom: 20px; } }
 
 #solutions {
   background-image: url("../images/bg_solutions_1920.jpg");
@@ -5904,7 +5918,7 @@ p.copyright {
   background-repeat: no-repeat;
   background-position: center top;
   resize: none;
-  height: 1305px;
+  height: auto;
   border: none; }
 
 #solutions > .container > h2 {
@@ -5941,20 +5955,11 @@ p.copyright {
   .box-folks > .row {
     padding: 60px 15px 35px 15px; }
   #solutions {
-    background-image: url("../images/bg_solutions_1920_02.jpg");
-    height: 1375px; } }
-
-@media (max-width: 1070px) {
-  .box-folks {
-    width: 1024px;
-    margin-left: -80px; }
-  .box-folks > .row {
-    padding: 60px 15px 35px 15px; } }
+    background-image: url("../images/bg_solutions_1920_02.jpg"); } }
 
 @media (max-width: 990px) {
   #solutions {
-    background-image: url("../images/bg_solutions_990.jpg");
-    height: 1735px; }
+    background-image: url("../images/bg_solutions_990.jpg"); }
   .content-folks {
     padding-bottom: 50px; }
   .box-folks {
@@ -5966,27 +5971,34 @@ p.copyright {
 @media (max-width: 480px) {
   #solutions {
     background-image: none;
-    height: 2586px;
     background-color: #1a1a1a; }
+  #solutions .col-xs-12 {
+    text-align: center; }
   h2 {
     font-size: 30px; }
-  #solutions > .container > .row > .col-xs-6 {
-    width: 90%;
-    padding-left: 10%;
-    text-align: center; }
-  #solutions > .container > .row > .col-xs-6 > img {
-    padding-top: 20px; }
+  .content-folks {
+    padding-top: 0px; }
   .box-folks {
-    margin-left: 0px;
+    margin-left: -25px;
     background-image: url("../images/box_folks_480.jpg");
-    width: 380px;
+    width: 115%;
     height: 790px; }
-  .container > .box-folks > .row > .col-xs-6 {
+  .box-folks .row {
+    padding: 50px 15px 35px 15px; }
+  .padding-box-folks {
+    padding: 0px 35px 80px 35px; } }
+
+@media (max-width: 320px) {
+  .col-xs-12 {
     width: 100%;
-    padding-left: 2%;
     text-align: center; }
-  .box-folks > .row {
-    padding: 50px 15px 35px 15px; } }
+  .box-folks {
+    margin-left: -45px;
+    width: 320px; }
+  .box-folks .row {
+    padding: 30px 15px 35px 15px; }
+  .padding-box-folks {
+    padding: 0px 25px 45px 25px; } }
 
 #projects {
   padding-top: 50px;
@@ -5994,11 +6006,8 @@ p.copyright {
   background: -webkit-linear-gradient(top, #fff, #ebebeb);
   background: -ms-linear-gradient(top, #fff, #ebebeb);
   background: -o-linear-gradient(top, #fff, #ebebeb);
-  height: 1500px;
+  height: auto;
   border: none; }
-
-#projects > h2 {
-  padding-top: 60px; }
 
 #projects > h3 {
   padding-bottom: 40px; }
@@ -6130,31 +6139,25 @@ p.copyright {
   height: 11px;
   background-color: #282828; }
 
-@media (max-width: 1199px) {
-  #projects {
-    height: 1000px; } }
-
-@media (max-width: 990px) {
-  #projects > h2 {
-    padding-top: 0px; }
-  #projects {
-    height: 1400px; } }
-
 @media (max-width: 767px) {
-  #projects {
-    height: 1400px; }
   .close-modal {
     display: none; } }
 
 @media (max-width: 480px) {
   #projects {
-    height: 1150px; }
-  #projects > h2 {
-    padding-top: 30px; }
+    padding-top: 50px; }
   .close-modal {
     display: none; }
   #Port-Carousel {
-    height: 350px; } }
+    height: 350px; }
+  .modal-body > .carousel {
+    max-height: 350px; } }
+
+@media (max-width: 320px) {
+  .portfolio-item {
+    margin: 0 0 43px; }
+  .modal-body > .carousel {
+    height: 270px; } }
 
 #clients {
   height: 500px; }
@@ -6167,10 +6170,10 @@ p.copyright {
   padding-top: 20px; }
 
 @media (max-width: 480px) {
-  h2 {
-    font-size: 30px; }
   #clients {
-    height: 330px; } }
+    height: auto; }
+  h2 {
+    font-size: 30px; } }
 
 #contact {
   background-image: url("../images/bg_footer_1920.jpg");
@@ -6190,7 +6193,7 @@ p.copyright {
   margin-left: -16px;
   position: absolute;
   width: 100%;
-  height: 400px;
+  height: 500px;
   z-index: 1;
   background: transparent url(../images/pattern.png) repeat top left; }
 
@@ -6201,10 +6204,10 @@ p.copyright {
   padding-top: 40px; }
 
 .icon-padding {
-  padding: 0px 0px 20px 0px; }
+  padding: 30px 0px 20px 0px; }
 
 .padding-copyright {
-  padding-top: 50px; }
+  padding-top: 116px; }
 
 .background-copyright {
   background-color: rgba(0, 0, 0, 0.2);
@@ -6215,12 +6218,6 @@ p.copyright {
 
 .return-top {
   padding-top: 20px; }
-
-#googleMap {
-  width: 100%;
-  height: 400px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%); }
 
 @media (max-width: 990px) {
   #contact {
@@ -6234,5 +6231,14 @@ p.copyright {
     padding-top: 30px; } }
 
 @media (max-width: 480px) {
+  #contact {
+    height: 655px;
+    margin-top: 20px; }
   .padding-copyright {
-    padding-top: 30px; } }
+    padding-top: 10px; }
+  .overlay-foot > .container {
+    padding-top: 0px; } }
+
+@media (max-width: 320px) {
+  .overlay-foot {
+    height: 490px; } }

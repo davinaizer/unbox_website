@@ -50,13 +50,12 @@ border-color: #00e3fe;*/
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: #cfc6a0;    
+    color: #cfc6a0;
 }
 
 .navbar-default .navbar-nav > .active > a {
     color: #cfc6a0;
     background: none;
-
 }
 
 .navbar-default .navbar-nav > .active > a:hover,
@@ -87,5 +86,21 @@ border-color: #00e3fe;*/
         font-family: "Roboto";
         font-weight: 100;
         font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-header {
+        margin-right: 0px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar-bg {
+        max-width: 320px;
+    }
+    .navbar-header {
+        max-width: 320px;
     }
 }
