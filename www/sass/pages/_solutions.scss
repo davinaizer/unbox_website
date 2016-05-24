@@ -52,6 +52,9 @@
     padding: 0px 35px 35px 35px;
 }
 
+.performance-area {
+    min-height: 500px;
+}
 @media (max-width: 1199px) {
     .box-folks {
         margin-left: -80px;
@@ -77,6 +80,11 @@
         background-image: url("../images/box_folks_990.jpg");
         width: 617px;
         height: 540px;
+    }
+}
+@media (max-width: 768px) {
+    #solutions {
+        background-image: url("../images/bg_solutions_768.jpg");
     }
 }
 
