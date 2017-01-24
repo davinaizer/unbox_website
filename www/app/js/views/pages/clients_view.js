@@ -2,46 +2,48 @@
  * Created by Naizer on 30/03/2016.
  */
 define([
-    'jquery',
-    'lodash',
-    'backbone',
-    'TweenMax',
-    'owl',
-    'text!templates/pages/clients.html'
-], function ($, _, Backbone, TweenMax, owl, tpl) {
-    "use strict";
+  'jquery',
+  'lodash',
+  'backbone',
+  'TweenMax',
+  'owl',
+  'text!templates/pages/clients.html'
+], function($, _, Backbone, TweenMax, owl, tpl) {
+  "use strict";
 
-    return Backbone.View.extend({
+  return Backbone.View.extend({
 
-        el: $("#clients"),
-        template: _.template(tpl),
-        events: {},
+    el: $("#clients"),
+    template: _.template(tpl),
+    events: {},
 
-        initialize: function () {
-            console.log(this.$el.attr("id") + ".initialize()");
-        },
+    initialize: function() {
+      console.log(this.$el.attr("id") + ".initialize()");
+    },
 
-        render: function () {
-            console.log(this.$el.attr("id") + ".render()");
+    render: function() {
+      console.log(this.$el.attr("id") + ".render()");
 
-            this.$el.css({opacity: 0});
-            this.$el.html(this.template(tpl));
-            this.transitionIn();
-        },
+      this.$el.css({ opacity: 0 });
+      this.$el.html(this.template(tpl));
 
-        transitionIn: function () {
-            var obj = this.$("#customer-list-owl");
-            if (obj.length) {
-                obj.owlCarousel({
-                    autoPlay: 3000, //Set AutoPlay to 3 seconds
-                    items: 6,
-                    itemsDesktop: [1199, 4],
-                    itemsDesktopSmall: [979, 4]
-                });
-            }
+      //--
+      var obj = this.$("#customer-list-owl");
+      if (obj.length) {
+        obj.owlCarousel({
+          autoPlay: 3000, //Set AutoPlay to 3 seconds
+          items: 6,
+          itemsDesktop: [1199, 4],
+          itemsDesktopSmall: [979, 4]
+        });
+      }
 
-            console.log(this.$el.attr("id") + ".transitionIn()");
-            TweenMax.to(this.$el, 1, {css: {opacity: 1}});
-        }
-    });
+      return this.$el;
+    },
+
+    transitionIn: function() {
+      console.log(this.$el.attr("id") + ".transitionIn()");
+      TweenMax.to(this.$el, 1, { css: { opacity: 1 } });
+    }
+  });
 });

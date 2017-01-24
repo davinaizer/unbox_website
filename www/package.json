@@ -1,19 +1,30 @@
 {
-  "name": "ebookjs",
+  "name": "unbox",
   "version": "1.0.0",
-  "description": "O Boticario Va e Venda - UNBOX Ebook JS",
+  "description": "UNBOX",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.0"
   },
   "devDependencies": {
+    "backbone": "^1.3.3",
+    "bootstrap": "~3.3.7",
     "browser-sync": "^2.10.0",
+    "font-awesome": "^4.7.0",
+    "gsap": "^1.19.1",
     "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-sass": "^2.1.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-sass": "^3.1.0",
     "gulp-template-compile": "^1.1.0",
     "gulp-zip": "^3.0.2",
-    "imagemin-pngquant": "^4.2.0"
+    "imagemin-pngquant": "^5.0.0",
+    "jquery": "^2.2.2",
+    "jquery.easing": "^1.4.1",
+    "lodash": "^4.17.4",
+    "owl.carousel": "^2.2.0",
+    "requirejs": "^2.3.2",
+    "requirejs-text": "^2.0.15",
+    "scrollmagic": "^2.0.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
