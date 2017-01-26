@@ -20,31 +20,31 @@ define([
   return Backbone.Router.extend({
 
     routes: {
-      ':page(/:id)': 'scrollTo'
+      //':page(/:id)': 'scrollTo'
     },
 
     initialize: function() {
-      console.log("Router.initialize");
+      console.log('Router.initialize');
 
       _.bindAll(this, 'scrollTo', 'checkUrlHash', 'openSubPage');
 
       this.views = {
-        "navbar": new NavbarView(),
-        "home": new HomeView(),
-        "unbox": new UnboxView(),
-        "solutions": new SolutionsView(),
-        "projects": new ProjectsView(),
-        "clients": new ClientsView(),
-        "contact": new ContactView(),
-        "footer": new FooterView()
+        'navbar': new NavbarView(),
+        'home': new HomeView(),
+        'unbox': new UnboxView(),
+        'solutions': new SolutionsView(),
+        'projects': new ProjectsView(),
+        'clients': new ClientsView(),
+        'contact': new ContactView(),
+        'footer': new FooterView()
       };
 
       this.isTweening = false;
-      this.currentRoute = "";
+      this.currentRoute = '';
     },
 
     renderAll: function() {
-      console.log("Router.renderAll");
+      console.log('Router.renderAll');
 
       _.forEach(this.views, function(view) {
         view.render();
@@ -52,24 +52,49 @@ define([
       });
 
       // block default anchor event
-      $("a[href^='#']").on('click', function(e) {
+      let that = this;
+      $('.nav-link').on('click', function(e) {
         e.preventDefault();
 
-        var url = $(this).attr("href");
-        Backbone.history.navigate(url, { trigger: false });
+        var url = $(this).attr('href');
+        that.scrollTo(url);
+        console.log('Router.nav-link:', url);
+
+        //Backbone.history.navigate(url, { trigger: false });
+      });
+
+      $('.portfolio-link').on('click', function(e) {
+        e.preventDefault();
+
+        var url = $(this).attr('href');
+        var page = url.split('/')[0];
+        var pageID = url.split('/')[1];
+
+        console.log('Router.portfolio-link:', url);
+
+        that.openSubPage(page, pageID);
+        //Backbone.history.navigate(url, { trigger: false });
       });
 
       //init ScrollSpy
-      $("body").on('activate.bs.scrollspy', $.proxy(this.checkUrlHash, this));
+      //$('body').on('activate.bs.scrollspy', $.proxy(this.checkUrlHash, this));
+
+      var baseFolder = window.location.pathname.replace('/', '').split('/')[0];
+      console.log("App.baseFolder:", baseFolder);
+
+      Backbone.history.start({ pushState: false, root: baseFolder });
     },
 
-    scrollTo: function(page, id) {
-      console.log("Router.scrollTo:", page, ":", id);
+    scrollTo: function(page) {
+
+      page = page.indexOf('/') === -1 ? page : page.split('/')[0];
+
+      console.log('Router.scrollTo:', page);
 
       if (page !== undefined && page.length > 0) {
         if (this.currentRoute != page) {
 
-          var $anchor = $("#" + page);
+          var $anchor = $(page);
           this.isTweening = true;
 
           TweenMax.to(window, 1.5, {
@@ -78,12 +103,8 @@ define([
             onAutoKill: this.onAutoKill,
             onComplete: this.onCompleteScroll,
             onCompleteScope: this,
-            onCompleteParams: [page, id]
+            onCompleteParams: [page]
           });
-        } else {
-          if (id !== undefined && id.length > 0) {
-            this.openSubPage(page, id);
-          }
         }
       }
     },
@@ -94,23 +115,22 @@ define([
 
     checkUrlHash: function() {
       if (!this.isTweening) {
-        var currentSection = $(".nav li.active > a").attr("href");
-        Backbone.history.navigate(currentSection, { trigger: false });
+        var currentSection = $('.nav li.active > a').attr('href');
+        Backbone.history.navigate('#' + currentSection, { trigger: false });
         this.currentRoute = Backbone.history.getFragment();
       }
     },
 
     onCompleteScroll: function(options) {
-      console.log("onCompleteScroll.options:", options);
       this.isTweening = false;
-      this.currentRoute = Backbone.history.getFragment();
+      //this.currentRoute = Backbone.history.getFragment();
     },
 
     openSubPage: function(page, id) {
-      console.log("Router.openSubPage:", page, "(" + id + ")");
+      console.log('Router.openSubPage:', page, '(' + id + ')');
 
-      if (page === "projects") {
-        $("#portfolioModal" + id).modal('show');
+      if (page === '#projects' && id.length > 0) {
+        $('#portfolioModal' + id).modal('show');
       }
     }
   });

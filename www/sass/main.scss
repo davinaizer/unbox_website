@@ -1,15 +1,18 @@
-/* LIBS */
-@import "variables";
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-/* EBOOK GLOBALS */
-@import "global";
-@import "type";
-@import "navbar";
-@import "components";
-/*  PAGE STYLES */
-@import "pages/home";
-@import "pages/unbox";
-@import "pages/solutions";
-@import "pages/projects";
-@import "pages/clients";
-@import "pages/contact";
+// LIBS 
+@import 'variables';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+// EBOOK GLOBALS 
+@import 'global';
+@import 'type';
+@import 'navbar';
+@import 'components';
+
+//  PAGE STYLES 
+@import 'pages/home';
+@import 'pages/unbox';
+@import 'pages/solutions';
+@import 'pages/projects';
+@import 'pages/clients';
+@import 'pages/contact';
+

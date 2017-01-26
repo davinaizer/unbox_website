@@ -2,10 +2,11 @@
  * Created by davinaizer on 10/3/15.
  */
 define([
+  'lodash',
   'jquery',
   'backbone',
   'router'
-], function($, Backbone, Router) {
+], function(_, $, Backbone, Router) {
   "use strict";
 
   return Backbone.View.extend({
@@ -13,17 +14,8 @@ define([
     initialize: function() {
       console.log("App.init");
 
-      var baseFolder = window.location.pathname.replace('/', '').split('/')[0];
-      console.log("App.baseFolder:", baseFolder);
-
       var router = new Router();
       router.renderAll();
-
-      Backbone.history.start({
-        pushState: false,
-        root: baseFolder
-      });
-
     }
   });
 });

@@ -28,18 +28,20 @@ gulp.task('optimize-images', function() {
     .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('./sass/**/*.scss', ['sass']);
-  gulp.watch('./templates/**/*.html', ['compile-jst']);
-  gulp.watch(['*.html', 'css/**/*.css', 'js/**/*.js'], { cwd: 'app' }, reload);
-});
-
 gulp.task('compile-jst', function() {
   gulp.src('templates/**/*.html')
     .pipe(template())
     .pipe(concat('templates.js'))
     .pipe(gulp.dest('app/js/templates'));
 });
+
+gulp.task('watch', function() {
+  gulp.watch('sass/**/*.scss', ['sass']);
+  gulp.watch('app/templates/**/*.html', ['compile-jst', reload]);
+  gulp.watch(['*.html', 'css/**/*.css', 'js/**/*.js'], { cwd: 'app' }, reload);
+});
+
+gulp.task('build', ['sass', 'compile-jst']);
 
 // watch files for changes and reload
 gulp.task('serve', function() {
@@ -75,4 +77,4 @@ gulp.task('zip-app', function() {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['watch', 'serve'], function() {});
+gulp.task('default', ['build', 'watch', 'serve'], function() {});
