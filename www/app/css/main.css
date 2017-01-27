@@ -5987,7 +5987,6 @@ p.copyright {
 
 @media (max-width: 480px) {
   #solutions {
-    background-image: none;
     background-color: #1a1a1a; }
   #solutions .col-xs-12 {
     text-align: center; }
@@ -5996,31 +5995,20 @@ p.copyright {
   .content-folks {
     padding-top: 0px; }
   .box-folks {
-    margin-left: -25px;
-    background-image: url("../images/box_folks_480.jpg");
-    width: 115%;
-    height: 790px; }
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    background-image: none;
+    background-color: #ce2739; }
   .box-folks .row {
     padding: 50px 15px 35px 15px; }
   .padding-box-folks {
-    padding: 0px 35px 80px 35px; }
+    padding: 0px 15px 30px 15px; }
   .panel-body {
     width: 105%;
     padding: 15px 0px 30px 15px; }
   .panel-body img {
     margin-left: -18px; } }
-
-@media (max-width: 320px) {
-  .col-xs-12 {
-    width: 100%;
-    text-align: center; }
-  .box-folks {
-    margin-left: -45px;
-    width: 320px; }
-  .box-folks .row {
-    padding: 30px 15px 35px 15px; }
-  .padding-box-folks {
-    padding: 0px 25px 45px 25px; } }
 
 #projects {
   background: -moz-linear-gradient(top, #f8f6f2, #ebebeb);
