@@ -32,51 +32,32 @@
 }
 
 .unbox-area {
-    border: none;
+    border: 0;
 }
 
 .padding-top-unbox {
     padding-top: 50px;
 }
 
-#unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
-    padding-left: 12%;
-    padding-right: 12%;
-    height: 220px;
+.carousel-content > .row {
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 245px;
 }
 
-.carousel {
-    margin-left: -35px;
+.carousel-indicators {
+        left: 49%;
 }
 
-#unbox-carousel > .carousel-indicators {
-    padding-top: 300px;
-}
-
-#unbox-carousel > .carousel-indicators li {
+.carousel-indicators li {
     border: none;
     background-color: #d32d40;
 }
 
-#unbox-carousel > .carousel-indicators .active {
+.carousel-indicators .active {
     width: 11px;
     height: 11px;
     background-color: #fff;
-}
-
-@media (max-width: 1199px) {
-    .le-featured {
-        max-width: 78%;
-        padding: 40px 40px 25px 40px;
-    }
-    .padding-top-unbox {
-        padding-top: 40px;
-    }
-    #unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
-        padding-left: 5%;
-        padding-right: 5%;
-        height: 230px;
-    }
 }
 
 @media (max-width: 990px) {
@@ -87,7 +68,7 @@
     .padding-top-unbox {
         padding-top: 20px;
     }
-    #unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
+    .carousel-content > .row {
         padding-left: 2%;
         padding-right: 2%;
         height: 280px;
@@ -117,9 +98,9 @@
     h2.inverted {
         font-size: 30px;
     }
-    #unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
-        padding-left: none;
-        padding-right: none;
+    .carousel-content > .row {
+        padding-left: 0;
+        padding-right: 0;
         height: 360px;
     }
     .padding-top-unbox {
@@ -128,8 +109,8 @@
 }
 
 @media (max-width: 320px) {
-    #unbox-carousel > .carousel-inner > .item > .carousel-content > .row {
-        height: 395px;
+    .carousel-content > .row {
+        height: 450px;
     }
     .le-featured {
         padding: 25px 40px 25px 40px;
