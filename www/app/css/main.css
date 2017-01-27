@@ -5745,7 +5745,9 @@ p.copyright {
 @media (max-width: 480px) {
   .navbar-header {
     margin-right: 0px;
-    width: 100%; } }
+    width: 100%; }
+  .navbar-toggle {
+    margin-right: 0; } }
 
 @media (max-width: 320px) {
   .navbar-bg {
@@ -5946,7 +5948,10 @@ p.copyright {
 .panel-body {
   height: auto;
   width: 95%;
-  padding: 15px 0px 30px 0px; }
+  padding: 15px 0px 30px 0px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 30px; }
 
 .line-collapse {
   height: 3px;
@@ -6195,7 +6200,7 @@ p.copyright {
   background-repeat: no-repeat;
   background-position: center top;
   resize: none;
-  height: 500px;
+  height: 600px;
   border: none; }
 
 .foot-position {
@@ -6205,7 +6210,7 @@ p.copyright {
   margin-left: -16px;
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 600px;
   z-index: 1;
   background: transparent url(../images/pattern.png) repeat top left; }
 
@@ -6219,7 +6224,7 @@ p.copyright {
   padding: 30px 0px 20px 0px; }
 
 .padding-copyright {
-  padding-top: 116px; }
+  padding-top: 64px; }
 
 .background-copyright {
   background-color: rgba(0, 0, 0, 0.2);
@@ -6234,7 +6239,9 @@ p.copyright {
 @media (max-width: 990px) {
   #contact {
     background-image: url("../images/bg_footer_990.jpg");
-    height: 490px; }
+    height: 530px; }
+  .overlay-foot {
+    height: 530px; }
   .overlay-foot > h3.inverted {
     padding-top: 20px; }
   .overlay-foot > .container {
@@ -6242,14 +6249,18 @@ p.copyright {
   #contact > .overlay-foot > .container > .row > .col-sm-6 > img {
     padding-top: 30px; } }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #contact {
-    height: 540px; } }
+    height: 770px; }
+  .overlay-foot {
+    height: 770px; } }
 
 @media (max-width: 480px) {
   #contact {
-    height: 655px;
+    height: 730px;
     margin-top: 20px; }
+  .overlay-foot {
+    height: 730px; }
   .padding-copyright {
     padding-top: 10px; }
   .overlay-foot > .container {
@@ -6257,4 +6268,6 @@ p.copyright {
 
 @media (max-width: 320px) {
   #contact {
-    height: 735px; } }
+    height: 805px; }
+  .overlay-foot {
+    height: 805px; } }
