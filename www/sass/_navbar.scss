@@ -49,7 +49,7 @@ border-color: #00e3fe;*/
     color: #fff;
 }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
     color: #cfc6a0;
 }
 

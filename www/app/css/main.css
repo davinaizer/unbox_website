@@ -5710,7 +5710,7 @@ p.copyright {
 .navbar-default .navbar-nav > li > a {
   color: #fff; }
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
   color: #cfc6a0; }
 
 .navbar-default .navbar-nav > .active > a {
@@ -5786,7 +5786,7 @@ p.copyright {
   background: transparent url(../images/pattern.png) repeat top left; }
 
 .intro-cell {
-  padding-top: 450px;
+  padding-top: 340px;
   height: 825px; }
 
 @media (max-width: 480px) {
