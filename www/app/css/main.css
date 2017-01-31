@@ -6031,7 +6031,7 @@ p.copyright {
   right: 25px;
   cursor: pointer; }
 
-.close-modal > :hover {
+.close-modal:hover {
   opacity: 0.3; }
 
 .close-modal > .lr {

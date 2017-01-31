@@ -13,12 +13,8 @@ define([
   return Backbone.View.extend({
 
     el: $("#home"),
-
     template: _.template(tpl),
-
-    events: {
-      "click #somewhere": "someFunction"
-    },
+    events: {},
 
     initialize: function() {
       console.log(this.$el.attr("id") + ".initialize()");

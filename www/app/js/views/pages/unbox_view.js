@@ -26,7 +26,7 @@ define([
 
       this.$el.css({ opacity: 0 });
       this.$el.html(this.template(tpl));
-      
+
       this.$('#unbox-carousel').carousel({
         interval: 3000
       });

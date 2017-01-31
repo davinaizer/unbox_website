@@ -50,8 +50,10 @@
     cursor: pointer;
 }
 
-.close-modal > &:hover {
-    opacity: 0.3;
+.close-modal {
+    &:hover {
+        opacity: 0.3;
+    }
 }
 
 .close-modal > .lr {
