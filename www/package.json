@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "UNBOX",
   "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.0"
-  },
   "devDependencies": {
     "backbone": "^1.3.3",
     "bootstrap": "~3.3.7",
@@ -13,6 +10,7 @@
     "browser-sync": "^2.10.0",
     "font-awesome": "^4.7.0",
     "gsap": "^1.19.1",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-sass": "^3.1.0",
@@ -28,7 +26,8 @@
     "scrollmagic": "^2.0.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node r.js -o build.js",
+    "dev": "gulp"
   },
   "author": "UNBOX",
   "license": "ISC"
