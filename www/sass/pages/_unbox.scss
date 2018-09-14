@@ -1,0 +1,121 @@
+/* UNBOX CSS
+-------------------------*/
+
+#unbox {
+    height: 1130px;
+    background-image: url("../images/unbox_bg.jpg");
+}
+
+.le-area {
+    background-image: url("../images/le_bg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    resize: none;
+    border: none;
+    height: 645px;
+}
+
+.le-area > .container > .row > .col-md-6 {
+    text-align: left;
+    min-height: 445px;
+    padding-top: 70px;
+}
+
+.le-featured {
+    max-width: 75%;
+    height: 200px;
+    background-image: url("../images/le-featured_bg.jpg");
+    padding: 40px 70px 25px 70px;
+}
+
+.unbox-area {
+    border: 0;
+}
+
+.padding-top-unbox {
+    padding-top: 50px;
+}
+
+#unbox .carousel-content > .row {
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 245px;
+}
+
+.carousel-indicators {
+        left: 49%;
+}
+
+.carousel-indicators li {
+    border: none;
+    background-color: #d32d40;
+}
+
+.carousel-indicators .active {
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+}
+
+@media (max-width: 990px) {
+    .le-featured {
+        max-width: 100%;
+        padding: 30px 35px 25px 35px;
+    }
+    .padding-top-unbox {
+        padding-top: 20px;
+    }
+    .carousel-content > .row {
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 280px;
+    }
+}
+
+@media (max-width: 767px) {
+    .le-featured {
+        padding: 20px 35px 25px 35px;
+    }
+    .carousel {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    #unbox {
+        height: auto;
+    }
+    .le-area {
+        height: auto;
+    }
+    .le-featured {
+        padding: 35px 40px 25px 40px;
+        height: auto;
+    }
+    h2.inverted {
+        font-size: 30px;
+    }
+    .carousel-content > .row {
+        padding-left: 0;
+        padding-right: 0;
+        height: 360px;
+    }
+    .padding-top-unbox {
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 320px) {
+    .carousel-content > .row {
+        height: 450px;
+    }
+    .le-featured {
+        padding: 25px 40px 25px 40px;
+    }
+    .col-xs-12 {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,111 @@
+/* FOOTER CSS
+-------------------------*/
+
+#contact {
+    background-image: url("../images/bg_footer_1920.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    resize: none;
+    height: 600px;
+    border: none;
+}
+
+.foot-position {
+    z-index: 5;
+}
+
+.overlay-foot {
+    margin-left: -16px;
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+    background: transparent url(../images/pattern.png) repeat top left;
+}
+
+.overlay-foot > h3.inverted {
+    padding-top: 60px;
+}
+
+.overlay-foot > .container {
+    padding-top: 40px;
+}
+
+.icon-padding {
+    padding: 30px 0px 20px 0px;
+}
+
+.padding-copyright {
+    padding-top: 64px
+}
+
+.background-copyright {
+    background-color: rgba(0, 0, 0, .2);
+    height: 50px;
+}
+
+.background-copyright > p.copyright {
+    padding-top: 15px;
+}
+
+.return-top {
+    padding-top: 20px;
+}
+
+@media (max-width: 990px) {
+    #contact {
+        background-image: url("../images/bg_footer_990.jpg");
+        height: 530px;
+    }
+
+    .overlay-foot {
+        height: 530px;
+    }
+    .overlay-foot > h3.inverted {
+        padding-top: 20px;
+    }
+    .overlay-foot > .container {
+        padding-top: 10px;
+    }
+    #contact > .overlay-foot > .container > .row > .col-sm-6 > img {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    #contact {
+        height: 770px;
+    }
+
+    .overlay-foot {
+        height: 770px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact {
+        height: 730px;
+        margin-top: 20px;
+    }
+    .overlay-foot {
+        height: 730px;
+    }
+    .padding-copyright {
+        padding-top: 10px
+    }
+    .overlay-foot > .container {
+        padding-top: 0px;
+    }
+}
+
+@media (max-width: 320px) {
+    #contact {
+        height: 805px;
+    }
+    .overlay-foot {
+        height: 805px;
+    }
+}

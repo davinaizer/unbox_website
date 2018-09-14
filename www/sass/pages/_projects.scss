@@ -1,0 +1,212 @@
+/* PROJECTS CSS
+-------------------------*/
+
+#projects {
+    background: -moz-linear-gradient(top, rgba(248, 246, 242, 1), rgba(235, 235, 235, 1));
+    background: -webkit-linear-gradient(top, rgba(248, 246, 242, 1), rgba(235, 235, 235, 1));
+    background: -ms-linear-gradient(top, rgba(248, 246, 242, 1), rgba(235, 235, 235, 1));
+    background: -o-linear-gradient(top, rgba(248, 246, 242, 1), rgba(235, 235, 235, 1));
+    height: auto;
+    border: none;
+}
+
+#projects > h3 {
+    padding-bottom: 40px;
+}
+
+
+/* Portifolio CSS
+-------------------------*/
+
+.carousel {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.portfolio-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.portfolio-item {
+    margin: 0 0 50px;
+    right: 0;
+}
+
+
+/* Close item
+-------------------------*/
+
+.close-modal {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-modal {
+    &:hover {
+        opacity: 0.3;
+    }
+}
+
+.close-modal > .lr {
+    height: 75px;
+    width: 1px;
+    margin-left: 35px;
+    background-color: #d32d40;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Safari and Chrome */
+    z-index: 1051;
+}
+
+.close-modal > .rl {
+    height: 75px;
+    width: 1px;
+    background-color: #d32d40;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Safari and Chrome */
+    z-index: 1052;
+}
+
+.portfolio-modal .close-modal {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    top: 25px;
+    right: 25px;
+    cursor: pointer
+}
+
+.portfolio-modal .close-modal:hover {
+    opacity: .3
+}
+
+.portfolio-modal .close-modal .lr {
+    height: 75px;
+    width: 1px;
+    margin-left: 35px;
+    background-color: #222;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    z-index: 1051
+}
+
+.portfolio-modal .close-modal .lr .rl {
+    height: 75px;
+    width: 1px;
+    background-color: #222;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    z-index: 1052
+}
+
+
+/* over botton item
+-------------------------*/
+
+.portfolio-link {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto
+}
+
+.portfolio-hover {
+    background: rgba(211, 45, 64, .8);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s
+}
+
+.portfolio-hover:hover {
+    opacity: 1
+}
+
+.portfolio-hover-content {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    top: 42%;
+    color: #fff;
+}
+
+
+/* control portifolio item
+-------------------------*/
+
+.modal-body {
+    ul {
+        color: #999999;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 130%;
+    }
+    .carousel {
+        height: 510px;
+        .carousel-indicators {
+            bottom: 0px;
+        }
+        .carousel-indicators li {
+            border: none;
+            background-color: #d32d40;
+        }
+        .carousel-indicators .active {
+            width: 11px;
+            height: 11px;
+            background-color: #282828;
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .close-modal {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects {
+    }
+    .close-modal {
+        display: none;
+    }
+    #Port-Carousel {
+        height: 350px;
+    }
+    .modal-body > .carousel {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 320px) {
+    .portfolio-item {
+        margin: 0 0 43px;
+    }
+    .modal-body > .carousel {
+        height: 270px;
+    }
+}
